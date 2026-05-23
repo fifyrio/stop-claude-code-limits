@@ -1,0 +1,17 @@
+{
+  "_comment": "Drop the `hooks` block into ~/.claude/settings.json. Replace <SKILL_DIR> with the absolute path to this repo (use `pwd` from the repo root).",
+  "hooks": {
+    "Stop": [
+      {
+        "command": "python3 <SKILL_DIR>/scripts/coach-hook.py",
+        "description": "Usage coach — print compact/clear advice when turns/cache thresholds are hit"
+      }
+    ]
+  },
+  "env": {
+    "_": "Optional thresholds. Defaults are fine for most users.",
+    "COACH_TURN_WARN": "20",
+    "COACH_CACHE_WARN_PCT": "40",
+    "COACH_BUST_DROP": "30000"
+  }
+}
